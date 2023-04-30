@@ -7,7 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function App() {
-  const [achivement, setAchivement] = useState(-11);
+  const [achivement, setAchivement] = useState(11);
   const [postData, setPost] = useState({
     stock: "msf",
     achivement: achivement,
@@ -23,10 +23,20 @@ function App() {
     });
   }
 
-  const lastPrice= (e) => {
+  async function sell() {
+    await axios({
+      method: "post",
+      url: "http://localhost:3000/sell",
+      data: postData,
+    }).then(function (res) {
+      console.log(res);
+    });
+  }
+
+  const lastPrice = (e) => {
     let newpost = { ...postData, lastprice: e };
     setPost(newpost);
-  }
+  };
 
   return (
     <div className="p-5 ">
@@ -41,7 +51,10 @@ function App() {
         >
           <span className="pi pi-cart-plus"></span> Buy
         </button>
-        <button className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
+        <button
+          onClick={sell}
+          className="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+        >
           <span className="pi pi-dollar"></span> Sell
         </button>
       </div>
