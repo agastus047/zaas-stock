@@ -7,7 +7,7 @@ import { useState } from "react";
 import axios from "axios";
 
 function App() {
-  const [achivement, setAchivement] = useState(11);
+  const [achivement, setAchivement] = useState(-11);
   const [postData, setPost] = useState({
     stock: "msf",
     achivement: achivement,

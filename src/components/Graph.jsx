@@ -17,10 +17,8 @@ function Graph({ func }) {
       method: "get",
       url: "http://localhost:3000/getgraph",
     }).then(function (res) {
-      //   console.log(res.data);
       setPrice(res.data.arr2);
       setTime(res.data.arr1);
-      //   console.log(time[time.length-1])
       test();
     });
     const documentStyle = getComputedStyle(document.documentElement);
