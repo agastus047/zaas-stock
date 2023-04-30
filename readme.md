@@ -82,7 +82,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgments
 
-- [Alpha Vantage](https://www.alphavantage.co/) for providing the stock data API.
+- Yahoo finance for providing stock data
 - [Express](https://expressjs.com/) for the backend web application framework.
 - [React](https://reactjs.org/) for the frontend JavaScript library.
 - [ARIMA](https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average) for the predictive model used in this project.
